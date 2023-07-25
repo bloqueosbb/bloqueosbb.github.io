@@ -230,7 +230,7 @@ td span:hover {
 #islas-dropdown option {
     padding: 10px;
     background-color: #fff;
-    font-size: 16px;
+    font-size: 20px;
     font-family: 'Arial', sans-serif;
     color: #333;
 }
@@ -253,4 +253,21 @@ td span:hover {
     font-size: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+
+/* Estilos para la línea horizontal de división */
+.divider1 {
+    border: none; /* Elimina el borde predeterminado */
+    height: 1px; /* Altura de la línea */
+    background-color: #ccc; /* Color de la línea */
+    margin: 20px 0; /* Espaciado vertical entre el botón Generar y el título Verificar cuenta BBX */
+}
+
+/* Estilos para la línea horizontal de división */
+.divider2 {
+    border: none; /* Elimina el borde predeterminado */
+    height: 1px; /* Altura de la línea */
+    background-color: #ccc; /* Color de la línea */
+    margin: 20px 0; /* Espaciado vertical entre el botón Generar y el título Verificar cuenta BBX */
 }
