@@ -10,11 +10,6 @@
     text-align: center;
 }
 
-.input-container {
-    display: flex;
-    align-items: center; /* Alinear elementos verticalmente */
-}
-
 .container h1 {
     font-size: 24px;
     color: #007bff; /* Puedes elegir cualquier color que desees */
@@ -202,72 +197,4 @@ td span:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: center;
-}
-
-/* Estilos para el contenedor del desplegable */
-.dropdown-container {
-    flex: 1; /* El desplegable ocupará el espacio restante */
-    display: inline-block;
-    position: relative;
-    width: 200px;
-}
-
-/* Estilos para el desplegable */
-#islas-dropdown {
-    width: 100%;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    appearance: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Estilos para las opciones del desplegable */
-#islas-dropdown option {
-    padding: 10px;
-    background-color: #fff;
-    font-size: 20px;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-}
-
-/* Estilos para el triángulo desplegable */
-.dropdown-container::after {
-    content: '\25BE'; /* Código del triángulo ▾ */
-    font-size: 12px;
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
-#verify-input {
-    flex: 1; /* El cuadro de texto ocupará el espacio restante */
-    margin-left: 10px; /* Agregamos un margen para separar el desplegable del cuadro de texto */
-    padding: 10px;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-
-/* Estilos para la línea horizontal de división */
-.divider1 {
-    border: none; /* Elimina el borde predeterminado */
-    height: 1px; /* Altura de la línea */
-    background-color: #ccc; /* Color de la línea */
-    margin: 20px 0; /* Espaciado vertical entre el botón Generar y el título Verificar cuenta BBX */
-}
-
-/* Estilos para la línea horizontal de división */
-.divider2 {
-    border: none; /* Elimina el borde predeterminado */
-    height: 1px; /* Altura de la línea */
-    background-color: #ccc; /* Color de la línea */
-    margin: 20px 0; /* Espaciado vertical entre el botón Generar y el título Verificar cuenta BBX */
 }
