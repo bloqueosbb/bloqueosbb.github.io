@@ -20,6 +20,18 @@
         });
     });
 
+    // Agregar un objeto para almacenar los nombres de las islas y sus bases de datos
+    const islasBasesDatos = {
+        GCA: 'produccion_lpa',
+        TFE: 'produccion_tfe',
+        PMI: 'produccion_pmi',
+        LZA: 'produccion_lza',
+        VAL: 'produccion_val',
+        SDQ: 'sd_produccion',
+        PUR: 'produccion_pr',
+        CAU: 'produccion_ca',
+    };
+
     // Evento de clic para los números telefónicos en la tabla
     const clickToCopyElements = document.querySelectorAll('.click-to-copy');
     clickToCopyElements.forEach(element => {
@@ -44,15 +56,18 @@
         });
     });
 
-    function generarYCopiarSentencias() {
-        const sentenciasDesbloqueo = [];
+function generarYCopiarSentencias() {
+    const sentenciasDesbloqueo = [];
 
-        function agregarSentencia(id, base) {
-            const bloqueo = document.getElementById(id).value.trim();
-            if (bloqueo !== '') {
-                sentenciasDesbloqueo.push(`select pg_terminate_backend(${base}${bloqueo});`);
-            }
-        }
+    // Obtener el valor seleccionado del desplegable
+    const islaSeleccionada = document.getElementById('islas-dropdown').value;
+
+    // Agregar la sentencia de bloqueo correspondiente según la isla seleccionada
+    const baseDatos = islasBasesDatos[islaSeleccionada];
+    if (baseDatos) {
+        sentenciasDesbloqueo.push(`sudo su postgres\npsql ${baseDatos}\nselect * from migracion.ver_bloqueos ;\n`);
+    }
+
 
         agregarSentencia('input-01', '');
         agregarSentencia('input-02', '');
@@ -67,17 +82,17 @@
         agregarSentencia('input-11', '');
         agregarSentencia('input-12', '');
 
-        if (sentenciasDesbloqueo.length > 0) {
-            const sentenciasCombinadas = sentenciasDesbloqueo.join('\n') + '\n';
-            copyToClipboard(sentenciasCombinadas);
-            alert('Sentencias de desbloqueo generadas y copiadas al portapapeles.');
+    if (sentenciasDesbloqueo.length > 0) {
+        const sentenciasCombinadas = sentenciasDesbloqueo.join('\n') + '\n';
+        copyToClipboard(sentenciasCombinadas);
+        alert('Sentencias de desbloqueo generadas y copiadas al portapapeles.');
 
-            // Vaciar los cuadros de texto después de copiar las sentencias
-            inputs.forEach(input => input.value = ''); // Establecer el valor a una cadena vacía
-        } else {
-            alert('No se ha ingresado ningún número en los cuadros de bloqueo.');
-        }
+        // Vaciar los cuadros de texto después de copiar las sentencias
+        inputs.forEach((input) => (input.value = '')); // Establecer el valor a una cadena vacía
+    } else {
+        alert('No se ha ingresado ningún número en los cuadros de bloqueo.');
     }
+}
 
     // Función para copiar texto al portapapeles
     function copyToClipboard(text) {
