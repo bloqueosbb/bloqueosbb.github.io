@@ -198,3 +198,42 @@ td span:hover {
     border-radius: 5px;
     text-align: center;
 }
+
+/* Estilos para los botones de consulta */
+.query-btn {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px; /* Espacio entre los botones y los cuadros de texto */
+}
+
+.query-btn button {
+    /* Estilos actuales de los botones de consulta */
+}
+
+/* ... Tu código CSS existente ... */
+
+/* Estilos para los botones */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 05px;
+}
+
+.button-container button {
+    background-color: #f0ad4e;
+    color: #000000;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Estilo al pasar el mouse por encima del botón */
+.button-container button:hover {
+    background-color: #0056b3;
+}
