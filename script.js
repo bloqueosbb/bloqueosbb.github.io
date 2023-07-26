@@ -113,3 +113,11 @@ function verificarCuentaBBX() {
         alert('Por favor, ingresa el nombre de la cuenta antes de presionar Enter.');
     }
 }
+
+document.getElementById('btn-enlace1').addEventListener('click', () => {
+    window.open('https://ikeasi.sharepoint.com/:x:/r/sites/BITBOXCARIBESRL/_layouts/15/Doc.aspx?sourcedoc=%7BAB74C594-CCEF-40A4-AC2D-3DD3FB1EC793%7D&file=Informe%20Bloqueos%20-BBX%202023.xlsx&action=default&mobileredirect=true', '_blank'); // Abrir enlace en una nueva pestaña
+});
+
+document.getElementById('btn-enlace2').addEventListener('click', () => {
+    window.open('https://ikeasi.sharepoint.com/sites/BITBOXCARIBESRL/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBITBOXCARIBESRL%2FDocumentos%20compartidos%2FHelpdesk%2FConsultas%20Bloqueos%20%2D%202023&viewid=84e846ea%2D3508%2D4d2e%2Dbecd%2D07e9b23a46f7', '_blank'); // Abrir enlace en una nueva pestaña
+});
