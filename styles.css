@@ -238,13 +238,7 @@ td span:hover {
     background-color: #0056b3;
 }
 
-body {
-    background-image: url('img/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* Otras propiedades de estilo, como color de texto y fuente, si es necesario */
-}
+
 
 #video-fondo {
   position: fixed; /* Fija el video en el fondo */
