@@ -1,12 +1,12 @@
 // Evento de clic para los botones de las consultas
-    document.getElementById('btn-gca').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_lpa\nselect * from migracion.ver_bloqueos ;\n'));
-    document.getElementById('btn-pmi').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_pmi\nselect * from migracion.ver_bloqueos ;\n'));
-    document.getElementById('btn-tfe').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_tfe\nselect * from migracion.ver_bloqueos ;\n'));
-    document.getElementById('btn-lza').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_lza\nselect * from migracion.ver_bloqueos ;\n'));
-    document.getElementById('btn-val').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_val\nselect * from migracion.ver_bloqueos ;\n'));
-    document.getElementById('btn-sdq').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql sd_produccion\nselect * from migracion.ver_bloqueos ;\n'));
-    document.getElementById('btn-pur').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_pr\nselect * from migracion.ver_bloqueos ;\n'));
-    document.getElementById('btn-cau').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_ca\nselect * from migracion.ver_bloqueos ;\n'));
+    document.getElementById('btn-gca').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_lpa\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
+    document.getElementById('btn-pmi').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_pmi\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
+    document.getElementById('btn-tfe').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_tfe\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
+    document.getElementById('btn-lza').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_lza\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
+    document.getElementById('btn-val').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_val\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
+    document.getElementById('btn-sdq').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql sd_produccion\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
+    document.getElementById('btn-pur').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_pr\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
+    document.getElementById('btn-cau').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_ca\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
 
     // Agregar evento de escucha al teclado para los cuadros de texto de bloqueo
     const inputs = document.querySelectorAll('.query-inputs input');
