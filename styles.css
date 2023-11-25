@@ -249,4 +249,20 @@ td span:hover {
   z-index: -1; /* Coloca el video detrás de otros elementos */
 }
 
+/* Agregar estilos para el nuevo botón de DESBLOQUEOS BITBOXER */
+#btn-desbloqueos {
+    background-color: #d9534f; /* Color llamativo (rojo) */
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btn-desbloqueos:hover {
+    background-color: #c9302c; /* Cambio de color al pasar el ratón */
+}
 
