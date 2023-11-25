@@ -114,18 +114,17 @@ function verificarCuentaBBX() {
     }
 }
 
-document.getElementById('btn-enlace1').addEventListener('click', () => {
-    window.open('https://ikeasi.sharepoint.com/:x:/r/sites/BITBOXCARIBESRL/_layouts/15/Doc.aspx?sourcedoc=%7BAB74C594-CCEF-40A4-AC2D-3DD3FB1EC793%7D&file=Informe%20Bloqueos%20-BBX%202023.xlsx&action=default&mobileredirect=true', '_blank'); // Abrir enlace en una nueva pestaña
-});
-
-document.getElementById('btn-enlace2').addEventListener('click', () => {
-    window.open('https://ikeasi.sharepoint.com/sites/BITBOXCARIBESRL/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBITBOXCARIBESRL%2FDocumentos%20compartidos%2FHelpdesk%2FConsultas%20Bloqueos%20%2D%202023&viewid=84e846ea%2D3508%2D4d2e%2Dbecd%2D07e9b23a46f7', '_blank'); // Abrir enlace en una nueva pestaña
-});
-
-// Eliminar la función generarYCopiarSentencias y cualquier referencia a los cuadros de texto
 
 // Agregar la siguiente función para redirigir a la página de bloqueos
 function redirectToBloqueosPage() {
     window.open('https://bory315.github.io/bloqueos/', '_blank');
+}
+
+function redirectToSharePoint() {
+    window.open('https://ikeasi.sharepoint.com/:x:/s/BITBOXCARIBESRL/EZTFdKvvzKRArC090_sex5MBieGwE43GkyDfvPoE-Lq4bw?e=p5IGrF', '_blank');
+}
+
+function redirectToOneNote() {
+    window.open('https://ikeasi.sharepoint.com/sites/BITBOXCARIBESRL/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBITBOXCARIBESRL%2FDocumentos%20compartidos%2FHelpdesk%2FConsultas%20Bloqueos%20%2D%202023&p=true&ga=1', '_blank');
 }
 
