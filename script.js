@@ -121,3 +121,11 @@ document.getElementById('btn-enlace1').addEventListener('click', () => {
 document.getElementById('btn-enlace2').addEventListener('click', () => {
     window.open('https://ikeasi.sharepoint.com/sites/BITBOXCARIBESRL/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBITBOXCARIBESRL%2FDocumentos%20compartidos%2FHelpdesk%2FConsultas%20Bloqueos%20%2D%202023&viewid=84e846ea%2D3508%2D4d2e%2Dbecd%2D07e9b23a46f7', '_blank'); // Abrir enlace en una nueva pestaña
 });
+
+// Eliminar la función generarYCopiarSentencias y cualquier referencia a los cuadros de texto
+
+// Agregar la siguiente función para redirigir a la página de bloqueos
+function redirectToBloqueosPage() {
+    window.open('https://bory315.github.io/bloqueos/', '_blank');
+}
+
