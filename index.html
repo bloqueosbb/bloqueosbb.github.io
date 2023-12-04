@@ -167,7 +167,27 @@
 </div>
 
 <h2>------------------------------------------------------------------------</h2>
+
+<div class="image-btn">
+    <button id="btn-con-imagen" onclick="copyTexto()">
+        <img src="./foto/george.png" alt="Texto alternativo">
+    </button>
+</div>
+
+<!-- ... (otro contenido) ... -->
+
+<script>
+    // ... (tu código JavaScript existente) ...
+
+    // Nueva función para copiar el texto al portapapeles
+    function copyTexto() {
+        const textoACopiar = 'select  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n';
+        copyToClipboard(textoACopiar);
+    }
+</script>
+
     </script>        
+
 
 
                 
@@ -186,8 +206,6 @@
     <video autoplay muted loop id="video-fondo">
         <source src="./vid/fondo.mp4" type="video/mp4">
     </video>
-
-
 
 
     <link rel="icon" type="image/png" href="favicon.png">
