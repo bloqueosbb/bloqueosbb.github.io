@@ -167,10 +167,17 @@
 </div>
 
 <h2>------------------------------------------------------------------------</h2>
+<h2>CONSULTAS BACANAS</h2>
 
 <div class="image-btn">
     <button id="btn-con-imagen" onclick="copyTexto()">
         <img src="./foto/george.png" alt="Texto alternativo">
+    </button>
+</div>
+
+<div class="image-btn">
+    <button id="btn-con-otra-imagen" onclick="copyTexto2()">
+        <img src="./foto/cuerva.png" alt="Texto alternativo">
     </button>
 </div>
 
@@ -183,6 +190,15 @@
     function copyTexto() {
         const textoACopiar = 'select  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n';
         copyToClipboard(textoACopiar);
+
+
+    }
+
+    function copyTexto2() {
+        const textoACopiar = 'sudo freememory.sh\n';
+        copyToClipboard(textoACopiar);
+
+
     }
 </script>
 
