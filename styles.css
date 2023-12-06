@@ -271,6 +271,9 @@ td span:hover {
   border: none; /* Sin borde */
   padding: 0; /* Sin relleno */
   cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  margin-right: 250px;
+  position: relative;
+  bottom: -50px;
 }
 
 #btn-con-imagen img {
@@ -280,3 +283,19 @@ td span:hover {
   border-radius: 50%; /* Agrega bordes redondeados si lo deseas */
 }
 
+#btn-con-otra-imagen {
+  background: transparent; /* Fondo transparente para que la imagen sea visible */
+  border: none; /* Sin borde */
+  padding: 0; /* Sin relleno */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  margin-left: 250px;
+  position: relative;
+  top: -50px;
+}
+
+#btn-con-otra-imagen img {
+  width: 100px; /* Ajusta el ancho de la imagen según sea necesario */
+  height: 100px; /* Ajusta la altura de la imagen según sea necesario */
+  object-fit: cover; /* Ajusta la forma en que la imagen se ajusta al tamaño del contenedor */
+  border-radius: 50%; /* Agrega bordes redondeados si lo deseas */
+}
