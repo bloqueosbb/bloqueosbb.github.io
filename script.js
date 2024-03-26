@@ -1,6 +1,8 @@
 // Evento de clic para los botones de las consultas
     document.getElementById('btn-gca').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_lpa\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
-    document.getElementById('btn-pmi').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_pmi\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
+    document.getElementById('btn-sudo-pmi').addEventListener('click', () => copyToClipboard('sudo su postgres'));
+    document.getElementById('btn-bbdd-pmi').addEventListener('click', () => copyToClipboard('psql produccion_pmi'));
+    document.getElementById('btn-consulta-pmi').addEventListener('click', () => copyToClipboard('select  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;'));
     document.getElementById('btn-tfe').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_tfe\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
     document.getElementById('btn-lza').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_lza\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
     document.getElementById('btn-val').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_val\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
@@ -121,10 +123,10 @@ function redirectToBloqueosPage() {
 }
 
 function redirectToSharePoint() {
-    window.open('https://ikeasi.sharepoint.com/:x:/s/BITBOXCARIBESRL/EVEqocVRRBhMpQEdXLyCFPcBymUg0ZLnX_E2_HTzNB1HFQ?e=NLI2oG', '_blank');
+    window.open('https://ikeasi.sharepoint.com/:x:/s/BITBOXCARIBESRL/EZTFdKvvzKRArC090_sex5MBieGwE43GkyDfvPoE-Lq4bw?e=p5IGrF', '_blank');
 }
 
 function redirectToOneNote() {
-    window.open('https://ikeasi.sharepoint.com/sites/BITBOXCARIBESRL/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBITBOXCARIBESRL%2FDocumentos%20compartidos%2FHelpdesk%2FConsultas%20Bloqueos%20%2D%202024&p=true&ga=1', '_blank');
+    window.open('https://ikeasi.sharepoint.com/sites/BITBOXCARIBESRL/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBITBOXCARIBESRL%2FDocumentos%20compartidos%2FHelpdesk%2FConsultas%20Bloqueos%20%2D%202023&p=true&ga=1', '_blank');
 }
 
