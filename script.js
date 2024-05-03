@@ -123,10 +123,10 @@ function redirectToBloqueosPage() {
 }
 
 function redirectToSharePoint() {
-    window.open('https://ikeasi.sharepoint.com/:x:/s/BITBOXCARIBESRL/EZTFdKvvzKRArC090_sex5MBieGwE43GkyDfvPoE-Lq4bw?e=p5IGrF', '_blank');
+    window.open('https://ikeasi.sharepoint.com/:x:/s/BITBOXCARIBESRL/EVEqocVRRBhMpQEdXLyCFPcBymUg0ZLnX_E2_HTzNB1HFQ?e=NLI2oG', '_blank');
 }
 
 function redirectToOneNote() {
-    window.open('https://ikeasi.sharepoint.com/sites/BITBOXCARIBESRL/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBITBOXCARIBESRL%2FDocumentos%20compartidos%2FHelpdesk%2FConsultas%20Bloqueos%20%2D%202023&p=true&ga=1', '_blank');
+    window.open('https://ikeasi.sharepoint.com/sites/BITBOXCARIBESRL/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBITBOXCARIBESRL%2FDocumentos%20compartidos%2FHelpdesk%2FConsultas%20Bloqueos%20%2D%202024&p=true&ga=1', '_blank');
 }
 
