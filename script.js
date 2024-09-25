@@ -1,5 +1,7 @@
 // Evento de clic para los botones de las consultas
-    document.getElementById('btn-gca').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_lpa\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
+    document.getElementById('btn-sudo-gca').addEventListener('click', () => copyToClipboard('sudo su postgres'));
+    document.getElementById('btn-bbdd-gca').addEventListener('click', () => copyToClipboard('psql produccion_lpa'));
+    document.getElementById('btn-consulta-gca').addEventListener('click', () => copyToClipboard('select  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;'));
     document.getElementById('btn-sudo-pmi').addEventListener('click', () => copyToClipboard('sudo su postgres'));
     document.getElementById('btn-bbdd-pmi').addEventListener('click', () => copyToClipboard('psql produccion_pmi'));
     document.getElementById('btn-consulta-pmi').addEventListener('click', () => copyToClipboard('select  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;'));
@@ -129,4 +131,3 @@ function redirectToSharePoint() {
 function redirectToOneNote() {
     window.open('https://ikeasi.sharepoint.com/sites/BITBOXCARIBESRL/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBITBOXCARIBESRL%2FDocumentos%20compartidos%2FHelpdesk%2FConsultas%20Bloqueos%20%2D%202024&p=true&ga=1', '_blank');
 }
-
