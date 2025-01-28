@@ -1,125 +1,67 @@
-// Evento de clic para los botones de las consultas
-    document.getElementById('btn-sudo-gca').addEventListener('click', () => copyToClipboard('sudo su postgres'));
-    document.getElementById('btn-bbdd-gca').addEventListener('click', () => copyToClipboard('psql produccion_lpa'));
-    document.getElementById('btn-consulta-gca').addEventListener('click', () => copyToClipboard('select  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;'));
-    document.getElementById('btn-sudo-pmi').addEventListener('click', () => copyToClipboard('sudo su postgres'));
-    document.getElementById('btn-bbdd-pmi').addEventListener('click', () => copyToClipboard('psql produccion_pmi'));
-    document.getElementById('btn-consulta-pmi').addEventListener('click', () => copyToClipboard('select  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;'));
-    document.getElementById('btn-tfe').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_tfe\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
-    document.getElementById('btn-lza').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_lza\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
-    document.getElementById('btn-val').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_val\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
-    document.getElementById('btn-sdq').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql sd_produccion\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
-    document.getElementById('btn-pur').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_pr\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
-    document.getElementById('btn-cau').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_ca\nselect  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n'));
-
-    // Agregar evento de escucha al teclado para los cuadros de texto de bloqueo
-    const inputs = document.querySelectorAll('.query-inputs input');
-    inputs.forEach(input => {
-        input.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
-                event.preventDefault(); // Evitar el comportamiento predeterminado del Enter en el cuadro de texto
-                generarYCopiarSentencias();
-            }
-        });
+// Función para copiar texto al portapapeles
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        // Mostrar notificación de éxito
+        showNotification('Texto copiado');
+    }).catch(err => {
+        // Mostrar notificación de error
+        showNotification('Error al copiar: ' + err, true);
     });
-
-    // Evento de clic para los números telefónicos en la tabla
-    const clickToCopyElements = document.querySelectorAll('.click-to-copy');
-    clickToCopyElements.forEach(element => {
-        element.addEventListener('click', () => {
-            const phoneNumber = element.dataset.phoneNumber;
-            copyToClipboard(phoneNumber);
-        });
-    });
-
-    document.getElementById('btn-generar').addEventListener('click', () => {
-        generarYCopiarSentencias();
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const numbersToCopy = document.querySelectorAll('.click-to-copy');
-
-        numbersToCopy.forEach(number => {
-            number.addEventListener('click', () => {
-                const phoneNumber = number.dataset.phoneNumber;
-                copyToClipboardAndAlert(phoneNumber);
-            });
-        });
-    });
-
-    function generarYCopiarSentencias() {
-        const sentenciasDesbloqueo = [];
-
-        function agregarSentencia(id, base) {
-            const bloqueo = document.getElementById(id).value.trim();
-            if (bloqueo !== '') {
-                sentenciasDesbloqueo.push(`select pg_terminate_backend(${base}${bloqueo});`);
-            }
-        }
-
-        agregarSentencia('input-01', '');
-        agregarSentencia('input-02', '');
-        agregarSentencia('input-03', '');
-        agregarSentencia('input-04', '');
-        agregarSentencia('input-05', '');
-        agregarSentencia('input-06', '');
-        agregarSentencia('input-07', '');
-        agregarSentencia('input-08', '');
-        agregarSentencia('input-09', '');
-        agregarSentencia('input-10', '');
-        agregarSentencia('input-11', '');
-        agregarSentencia('input-12', '');
-
-        if (sentenciasDesbloqueo.length > 0) {
-            const sentenciasCombinadas = sentenciasDesbloqueo.join('\n') + '\n';
-            copyToClipboard(sentenciasCombinadas);
-
-            // Vaciar los cuadros de texto después de copiar las sentencias
-            inputs.forEach(input => input.value = ''); // Establecer el valor a una cadena vacía
-        } else {
-            alert('No se ha ingresado ningún número en los cuadros de bloqueo.');
-        }
-    }
-
-    // Función para copiar texto al portapapeles
-    function copyToClipboard(text) {
-        const el = document.createElement('textarea');
-        el.value = text;
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
-    }
-
-
-// ... (Tu código JavaScript existente) ...
-
-// Agregar evento de escucha al teclado para el cuadro de texto de Verificar cuenta BBX
-const verifyInput = document.getElementById('verify-input');
-verifyInput.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        event.preventDefault();
-        verificarCuentaBBX();
-    }
-});
-
-// ... (Tu código JavaScript existente) ...
-
-function verificarCuentaBBX() {
-    const nombreCuenta = verifyInput.value.trim();
-    if (nombreCuenta !== '') {
-        const sentencia = `select nombre,created as fecha_creacion from ikea_erp.usuario where nombre = '${nombreCuenta}';\n`;
-        copyToClipboard(sentencia);
-
-        // Vaciar el cuadro de texto después de copiar la sentencia
-        verifyInput.value = '';
-    } else {
-        alert('Por favor, ingresa el nombre de la cuenta antes de presionar Enter.');
-    }
 }
 
+// Función para mostrar notificaciones
+function showNotification(message, isError = false) {
+    const notification = document.createElement('div');
+    notification.textContent = message;
+    notification.style.position = 'fixed';
+    notification.style.bottom = '20px';
+    notification.style.right = '20px';
+    notification.style.padding = '10px 20px';
+    notification.style.backgroundColor = isError ? '#e74c3c' : '#2ecc71';
+    notification.style.color = 'white';
+    notification.style.borderRadius = '5px';
+    notification.style.zIndex = '1000';
+    notification.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
+    document.body.appendChild(notification);
 
-// Agregar la siguiente función para redirigir a la página de bloqueos
+    // Eliminar la notificación después de 3 segundos
+    setTimeout(() => {
+        document.body.removeChild(notification);
+    }, 3000);
+}
+
+// Eventos para los botones de consultas
+document.getElementById('btn-sudo-gca').addEventListener('click', () => copyToClipboard('sudo su postgres'));
+document.getElementById('btn-bbdd-gca').addEventListener('click', () => copyToClipboard('psql produccion_lpa'));
+document.getElementById('btn-consulta-gca').addEventListener('click', () => copyToClipboard('select blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
+
+document.getElementById('btn-sudo-pmi').addEventListener('click', () => copyToClipboard('sudo su postgres'));
+document.getElementById('btn-bbdd-pmi').addEventListener('click', () => copyToClipboard('psql produccion_pmi'));
+document.getElementById('btn-consulta-pmi').addEventListener('click', () => copyToClipboard('select blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
+
+document.getElementById('btn-sudo-tfe').addEventListener('click', () => copyToClipboard('sudo su postgres'));
+document.getElementById('btn-bbdd-tfe').addEventListener('click', () => copyToClipboard('psql produccion_tfe'));
+document.getElementById('btn-consulta-tfe').addEventListener('click', () => copyToClipboard('select blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
+
+document.getElementById('btn-sudo-lza').addEventListener('click', () => copyToClipboard('sudo su postgres'));
+document.getElementById('btn-bbdd-lza').addEventListener('click', () => copyToClipboard('psql produccion_lza'));
+document.getElementById('btn-consulta-lza').addEventListener('click', () => copyToClipboard('select blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
+
+
+document.getElementById('btn-val').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_val\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
+document.getElementById('btn-sdq').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql sd_produccion\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
+document.getElementById('btn-pur').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_pr\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
+document.getElementById('btn-cau').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_ca\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
+
+// Eventos para los números telefónicos
+document.querySelectorAll('.click-to-copy').forEach(element => {
+    element.addEventListener('click', () => {
+        const phoneNumber = element.getAttribute('data-phone-number');
+        copyToClipboard(phoneNumber);
+    });
+});
+
+// Redirecciones
 function redirectToBloqueosPage() {
     window.open('https://bory315.github.io/bloqueos/', '_blank');
 }
@@ -131,3 +73,12 @@ function redirectToSharePoint() {
 function redirectToOneNote() {
     window.open('https://ikeasi.sharepoint.com/sites/BITBOXCARIBESRL/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBITBOXCARIBESRL%2FDocumentos%20compartidos%2FHelpdesk%2FConsultas%20Bloqueos%20%2D%202024&p=true&ga=1', '_blank');
 }
+
+function redirectToGuardias() {
+  window.open('https://ikeasi.sharepoint.com/:x:/r/sites/BITBOXCARIBESRL/_layouts/15/doc2.aspx?sourcedoc=%7B01964FEF-2ECA-4E8F-B481-5ABDDB5425BB%7D&file=Guardia%20-%20Helpdesk%20interno.xlsx&action=default&mobileredirect=true', '_blank');
+}
+
+document.getElementById('btn-liberar-memoria').addEventListener('click', () => {
+    copyToClipboard('sudo freememory.sh');
+});
+
