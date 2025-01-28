@@ -1,301 +1,303 @@
-/* Estilos para el contenedor principal */
-.container {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto; /* Centra el contenedor en la página */
-    padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
+:root {
+  --primary-color: #2C3E50;
+  --secondary-color: #3498DB;
+  --accent-color: #1ABC9C;
+  --background: #ECF0F1;
+  --text-color: #34495E;
+  --table-header: #2C3E50;
+  --table-row-even: #F8F9F9;
+  --table-row-hover: #EBF5FB;
 }
 
-.container h1 {
-    font-size: 24px;
-    color: #007bff; /* Puedes elegir cualquier color que desees */
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-family: 'Arial', sans-serif; /* Puedes cambiar la fuente según tus preferencias */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--background);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  text-align: center; /* Centra todo el texto dentro del contenedor */
 }
 
 h2 {
-color: #007bff;
-    font-size: 24px;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin: 2rem 0 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
 }
 
-.left-side h2 {
-    color: #007bff;
-    font-size: 24px;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent-color);
 }
 
-.right-side h2 {
-    color: #007bff;
-    font-size: 24px;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-}
-
-
-
-/* Estilos para los botones de consulta */
-.query-btn {
-    display: flex;
-    justify-content: center; /* Alinea los botones hacia el inicio del contenedor */
-    flex-wrap: wrap;
-    margin-bottom: 20px; /* Espacio entre los botones y los cuadros de texto */
-}
-
-.query-btn button {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px; /* Puedes ajustar este valor según el espacio deseado entre los botones */
-}
-
-
-button:active {
-    background-color: #ffcc00;
-    transition: background-color 0.3s;
-}
-
-.query-inputs {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.query-inputs input {
-    width: 8ch;
-    padding: 10px;
-    margin: 5px;
-    font-size: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    transition: font-size 0.2s;
-}
-
-.query-inputs input:focus {
-    font-size: 30px;
-}
-
-#btn-generar {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-/* Estilos para la tabla */
-.left-side table, .right-side table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px; /* Espacio entre las tablas y los botones de bloqueo */
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.left-side th, .left-side td, .right-side th, .right-side td {
-    padding: 8px;
-    border-bottom: 2px solid #ccc;
-}
-
-.left-side th, .right-side th {
-    background-color: #f0f0f0;
-}
-
-.left-side td, .right-side td {
-    text-align: center;
-}
-
-/* Estilos para los lados izquierdo y derecho */
-.left-side, .right-side {
-    flex: 1; /* Ambos lados ocupan el mismo espacio disponible */
-    text-align: left;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Estilos para el contenedor de las tablas */
 .tables-container {
-    display: flex; /* Alinea las tablas como columnas */
-    justify-content: space-between; /* Espacio entre las tablas */
-    margin-bottom: 20px; /* Espacio entre las tablas y los botones de bloqueo */
-}
-/* Estilos para los números telefónicos en la tabla */
-.left-side td.click-to-copy {
-    white-space: pre; /* Mantiene los espacios en blanco y saltos de línea */
-    cursor: pointer;
-    color: #007bff; /* Color de enlace */
-    text-decoration: underline; /* Subrayado como enlace */
+  display: flex;
+  justify-content: center; /* Centra la tabla */
+  margin-bottom: 2rem;
 }
 
-.left-side td.click-to-copy:hover {
-    color: #0056b3; /* Color de enlace al pasar el mouse */
+.left-side {
+  width: 100%;
+  max-width: 800px; /* Ajusta el ancho máximo de la tabla */
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin: 0 auto; /* Centra la tabla dentro de su contenedor */
 }
 
 th, td {
-    padding: 8px;
-    border-bottom: 2px solid #ccc;
-    text-align: center;
+  padding: 1rem;
+  text-align: center;
 }
 
 th {
-    background-color: #f0f0f0;
+  background: var(--table-header);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
-td span {
-    cursor: pointer;
+tr:nth-child(even) {
+  background: var(--table-row-even);
 }
 
-td span:hover {
-    background-color: #f0f0f0;
-    cursor: pointer;
+.click-to-copy {
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
-/* ... (Tu código CSS existente) ... */
-
-.verify-account {
-    margin-top: 20px;
-    text-align: center;
+.click-to-copy:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
-.verify-account h2 {
-    color: #007bff;
-    font-size: 24px;
-    font-family: 'Arial', sans-serif;
-}
-
-.verify-account input {
-    width: 400px;
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-}
-
-/* Estilos para los botones de consulta */
 .query-btn {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 20px; /* Espacio entre los botones y los cuadros de texto */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+  justify-content: center; /* Centra los botones */
 }
 
 .query-btn button {
-    /* Estilos actuales de los botones de consulta */
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-/* ... Tu código CSS existente ... */
+.query-btn button::before {
+  content: ''; /* Eliminamos el símbolo */
+}
 
-/* Estilos para los botones */
+.query-btn button:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(42,63,95,0.15);
+}
+
+#btn-desbloqueos {
+  background: linear-gradient(135deg, var(--accent-color), #16A085);
+  padding: 1.2rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  display: block;
+  width: fit-content;
+}
+
 .button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 05px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
 .button-container button {
-    background-color: #f0ad4e;
-    color: #000000;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px;
-    transition: background-color 0.3s;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.2s;
 }
 
-/* Estilo al pasar el mouse por encima del botón */
 .button-container button:hover {
-    background-color: #0056b3;
+  background: var(--secondary-color);
+  transform: scale(1.05);
 }
 
-
-
-#video-fondo {
-  position: fixed; /* Fija el video en el fondo */
-  top: 0;
-  left: 0;
-  min-width: 100%; /* Ancho mínimo del video */
-  min-height: 100%; /* Altura mínima del video */
-  z-index: -1; /* Coloca el video detrás de otros elementos */
+.clickable-header {
+  background: var(--background);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  transition: all 0.2s;
+  border: 2px solid var(--primary-color);
 }
 
-/* Agregar estilos para el nuevo botón de DESBLOQUEOS BITBOXER */
-#btn-desbloqueos {
-    background-color: #d9534f; /* Color llamativo (rojo) */
-    color: #ffffff;
+.clickable-header:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateX(5px);
+}
+
+.image-btn {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Espacio entre los botones */
+  margin: 2rem 0;
+  flex-wrap: wrap; /* Para que los botones se ajusten en pantallas pequeñas */
+}
+
+.image-btn img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-color);
+  transition: all 0.3s;
+}
+
+.image-btn button {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.image-btn button:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(42,63,95,0.15);
+}
+
+/* Toast para feedback visual */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 1rem 2rem;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tables-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .query-btn {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  
+  .container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+.guardias-btn {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+#btn-guardias { /* Aquí está el cambio */
+    background: linear-gradient(135deg, var(--accent-color), #16A085);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
     border: none;
-    padding: 15px 30px;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
-#btn-desbloqueos:hover {
-    background-color: #c9302c; /* Cambio de color al pasar el ratón */
+#btn-guardias:hover {
+    background: linear-gradient(135deg, #1ABC9C, #16A085);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-#btn-con-imagen {
-  background: transparent; /* Fondo transparente para que la imagen sea visible */
-  border: none; /* Sin borde */
-  padding: 0; /* Sin relleno */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  margin-right: 250px;
-  position: relative;
-  bottom: -50px;
+  
+  h2 {
+    font-size: 1.4rem;
+  }
 }
 
-#btn-con-imagen img {
-  width: 100px; /* Ajusta el ancho de la imagen según sea necesario */
-  height: 100px; /* Ajusta la altura de la imagen según sea necesario */
-  object-fit: cover; /* Ajusta la forma en que la imagen se ajusta al tamaño del contenedor */
-  border-radius: 50%; /* Agrega bordes redondeados si lo deseas */
+#btn-liberar-memoria {
+    background: linear-gradient(135deg, var(--accent-color), #16A085);
+    color: white;
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    display: block;
+    margin: 2rem auto; /* Centrar el botón */
+    width: fit-content; /* Ajustar el ancho al contenido */
 }
 
-#btn-con-otra-imagen {
-  background: transparent; /* Fondo transparente para que la imagen sea visible */
-  border: none; /* Sin borde */
-  padding: 0; /* Sin relleno */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  margin-left: 250px;
-  position: relative;
-  top: -50px;
-}
-
-#btn-con-otra-imagen img {
-  width: 100px; /* Ajusta el ancho de la imagen según sea necesario */
-  height: 100px; /* Ajusta la altura de la imagen según sea necesario */
-  object-fit: cover; /* Ajusta la forma en que la imagen se ajusta al tamaño del contenedor */
-  border-radius: 50%; /* Agrega bordes redondeados si lo deseas */
+#btn-liberar-memoria:hover {
+    background: linear-gradient(135deg, #1ABC9C, #16A085);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
