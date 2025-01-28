@@ -73,42 +73,15 @@
                     </tr>
                 </table>
             </div>
-
-<div class="right-side">
-    <h2 class="clickable-header">CLICK AQUI CONTACTOS GUARDIAS</h2>
-    <table>
-        <h2 class="clickable-header">CLICK AQUI CONTACTOS GUARDIAS</h2>
-        <h2 class="clickable-header">CLICK AQUI CONTACTOS GUARDIAS</h2>
-        <h2 class="clickable-header">CLICK AQUI CONTACTOS GUARDIAS</h2>
-        <h2 class="clickable-header">CLICK AQUI CONTACTOS GUARDIAS</h2>
-        <h2 class="clickable-header">CLICK AQUI CONTACTOS GUARDIAS</h2>
-        <h2 class="clickable-header">CLICK AQUI CONTACTOS GUARDIAS</h2>
-        <h2 class="clickable-header">CLICK AQUI CONTACTOS GUARDIAS</h2>
-        <h2 class="clickable-header">CLICK AQUI CONTACTOS GUARDIAS</h2>
-        <h2 class="clickable-header">CLICK AQUI CONTACTOS GUARDIAS</h2>
-    </table>
-</div>
-
-<script>
-    // Seleccionar todos los elementos <h2> con la clase "clickable-header"
-    const headers = document.querySelectorAll('.clickable-header');
-
-    // Agregar un evento de clic a cada h2
-    headers.forEach(header => {
-        header.addEventListener('click', () => {
-            window.open('https://ikeasi.sharepoint.com/:x:/r/sites/BITBOXCARIBESRL/_layouts/15/Doc.aspx?sourcedoc=%7B01964FEF-2ECA-4E8F-B481-5ABDDB5425BB%7D&file=Guardia%20-%20Helpdesk%20interno.xlsx&action=default&mobileredirect=true', '_blank');
-        });
-    });
-</script>
-<style>
-    /* Cambiar el cursor a puntero al pasar por encima de los h2 */
-    .clickable-header {
-        cursor: pointer;
-    }
-</style>
-
         </div>
-            <h2>CONSULTAS DE BLOQUEOS BITBOXER</h2>
+
+        <!-- Botón GUARDIAS -->
+        <div class="guardias-btn">
+            <button id="btn-guardias" onclick="redirectToGuardias()" style="background: linear-gradient(135deg, #1ABC9C, #16A085); color: white; padding: 1rem 2rem; border-radius: 12px; cursor: pointer;">GUARDIAS</button>
+        </div>
+
+        <!-- Resto del contenido -->
+        <h2>CONSULTAS DE BLOQUEOS BITBOXER</h2>
         <div class="query-btn">
             <button id="btn-sudo-gca">SUDO GCA</button>
             <button id="btn-bbdd-gca">BBDD GCA</button>
@@ -116,87 +89,33 @@
             <button id="btn-sudo-pmi">SUDO PMI</button>
             <button id="btn-bbdd-pmi">BBDD PMI</button>
             <button id="btn-consulta-pmi">CONSULTA PMI</button>
-            <button id="btn-tfe">TFE</button>
-            <button id="btn-lza">LZA</button>
+            <button id="btn-sudo-tfe">SUDO TFE</button>
+            <button id="btn-bbdd-tfe">BBDD TFE</button>
+            <button id="btn-consulta-tfe">CONSULTA TFE</button>
+            <button id="btn-sudo-lza">SUDO LZA</button>
+            <button id="btn-bbdd-lza">BBDD LZA</button>
+            <button id="btn-consulta-lza">CONSULTA LZA</button>
             <button id="btn-val">VAL</button>
             <button id="btn-sdq">SDQ</button>
             <button id="btn-pur">PUR</button>
             <button id="btn-cau">CAU</button>
         </div>
 
+        <div class="query-btn">
+            <button id="btn-desbloqueos" onclick="redirectToBloqueosPage()">DESBLOQUEOS BITBOXER</button>
+        </div>
+        <h2>------------------------------------------------------------------------</h2>
+	<h2>LIBERAR MEMORIA</h2>
+	<div class="query-btn">
+    		<button id="btn-liberar-memoria">LIBERAR MEMORIA</button>
+	</div>
 
-
-<!-- Reemplazar la sección actual de "DESBLOQUEOS BITBOXER" con la siguiente: -->
-<h2>------------------------------------------------------------------------</h2>
-
-<div class="query-btn">
-    <button id="btn-desbloqueos" onclick="redirectToBloqueosPage()">DESBLOQUEOS BITBOXER</button>
-</div>
-
-<h2>------------------------------------------------------------------------</h2>
-<h2>CONSULTAS BACANAS</h2>
-
-<div class="image-btn">
-    <button id="btn-con-imagen" onclick="copyTexto()">
-        <img src="./foto/george.png" alt="Texto alternativo">
-    </button>
-</div>
-
-<div class="image-btn">
-    <button id="btn-con-otra-imagen" onclick="copyTexto2()">
-        <img src="./foto/cuerva.png" alt="Texto alternativo">
-    </button>
-</div>
-
-<!-- -->
-
-<script>
-    // ... (tu código JavaScript existente) ...
-
-    // Nueva función ara copiar el texto al portapapeles
-    function copyTexto() {
-        const textoACopiar = 'select  blocked_pid, blocking_pid, query_blocked\nfrom migracion.ver_bloqueos;\n';
-        copyToClipboard(textoACopiar);
-
-
-    }
-
-    function copyTexto2() {
-        const textoACopiar = 'sudo freememory.sh\n';
-        copyToClipboard(textoACopiar);
-
-
-    }
-</script>
-
-    </script>        
-
-
-
-                
-                <div class="button-container">
-    <button id="btn-enlace1" onclick="redirectToSharePoint()">SHAREPOINT</button>
-    <button id="btn-enlace2" onclick="redirectToOneNote()">ONENOTE</button>
-                </div>
-      <!--  <div class="verify-account">
-    <h2>Verificar cuenta BBX</h2>
-    <h3>Recuerda ingresar el SUDO y PSQL antes de pegar la consulta</h3>
-    <input type="text" id="verify-input" placeholder="Escribe el usuario de HRM" />
-</div>
-    </div>-->
-
-
-    <!-- <video autoplay muted loop id="video-fondo">
-        <source src="./vid/fondo.mp4" type="video/mp4">
-    </video> -->
-
-
-    <link rel="icon" type="image/png" href="favicon.png">
+        <div class="button-container">
+            <button id="btn-enlace1" onclick="redirectToSharePoint()">SHAREPOINT</button>
+            <button id="btn-enlace2" onclick="redirectToOneNote()">ONENOTE</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
-
-
-
-
 </body>
 </html>
