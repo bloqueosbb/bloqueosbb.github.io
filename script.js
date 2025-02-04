@@ -48,10 +48,10 @@ document.getElementById('btn-bbdd-lza').addEventListener('click', () => copyToCl
 document.getElementById('btn-consulta-lza').addEventListener('click', () => copyToClipboard('select blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
 
 
-document.getElementById('btn-val').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_val\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
-document.getElementById('btn-sdq').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql sd_produccion\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
-document.getElementById('btn-pur').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_pr\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
-document.getElementById('btn-cau').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_ca\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
+document.getElementById('btn-val').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_val\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;\n'));
+document.getElementById('btn-sdq').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql sd_produccion\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;\n'));
+document.getElementById('btn-pur').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_pr\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;\n'));
+document.getElementById('btn-cau').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_ca\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;\n'));
 
 // Eventos para los números telefónicos
 document.querySelectorAll('.click-to-copy').forEach(element => {
@@ -79,6 +79,21 @@ function redirectToGuardias() {
 }
 
 document.getElementById('btn-liberar-memoria').addEventListener('click', () => {
-    copyToClipboard('sudo freememory.sh');
+    copyToClipboard('sudo freememory.sh\n');
 });
+
+// Función para alternar entre modo oscuro y claro
+function toggleMode() {
+    const body = document.body;
+    const modeIcon = document.getElementById('mode-icon');
+
+    if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        modeIcon.textContent = 'brightness_2'; // Ícono para modo claro
+    } else {
+        body.classList.add('dark-mode');
+        modeIcon.textContent = 'brightness_5'; // Ícono para modo oscuro
+    }
+}
+
 
