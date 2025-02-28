@@ -78,6 +78,10 @@ function redirectToGuardias() {
   window.open('https://ikeasi.sharepoint.com/:x:/r/sites/BITBOXCARIBESRL/_layouts/15/doc2.aspx?sourcedoc=%7B01964FEF-2ECA-4E8F-B481-5ABDDB5425BB%7D&file=Guardia%20-%20Helpdesk%20interno.xlsx&action=default&mobileredirect=true', '_blank');
 }
 
+function redirectToFacturasCorruptas() {
+    window.open('http://192.168.36.168:3000/', '_blank');
+}
+
 document.getElementById('btn-liberar-memoria').addEventListener('click', () => {
     copyToClipboard('sudo freememory.sh\n');
 });
@@ -95,5 +99,4 @@ function toggleMode() {
         modeIcon.textContent = 'brightness_5'; // Ícono para modo oscuro
     }
 }
-
 
