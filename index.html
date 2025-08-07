@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -119,7 +120,28 @@
             <button id="btn-enlace1" onclick="redirectToSharePoint()">SHAREPOINT</button>
             <button id="btn-enlace2" onclick="redirectToOneNote()">ONENOTE</button>
         </div>
+
+
+	<h2>------------------------------------------------------------------------</h2>
+<h2>PERMISOS PERSONALIZADOS</h2>
+<div class="template-box">
+  <form class="template-form" onsubmit="generarPermiso(event)">
+    <input type="text" placeholder="Nombre de usuario" name="nombre" required />
+    <input type="text" placeholder="Usuario de referencia" name="referencia" required />
+    <input type="text" placeholder="Plataforma" name="plataforma" required />
+    <input type="text" placeholder="Acceso" name="acceso" required />
+    <div class="form-buttons">
+      <button type="submit">Generar y Copiar</button>
+      <button type="button" onclick="limpiarResultado()">Limpiar</button>
     </div>
+  </form>
+  <div class="template-content" id="resultado-permiso"></div>
+</div>
+
+
+    </div>
+
+
 
     <script src="script.js"></script>
 </body>
