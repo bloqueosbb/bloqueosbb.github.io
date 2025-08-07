@@ -100,3 +100,31 @@ function toggleMode() {
     }
 }
 
+function generarPermiso(e) {
+    e.preventDefault();
+    const form = e.target;
+    const nombre = form.nombre.value;
+    const referencia = form.referencia.value;
+    const plataforma = form.plataforma.value;
+    const acceso = form.acceso.value;
+
+    const texto = `Hola,\nSe han asignado los permisos de ${referencia} al usuario ${nombre} en ${plataforma}.\n\nUsuario: ${nombre}\nClave: ${acceso}\n\nUn saludo.`;
+
+    navigator.clipboard.writeText(texto).then(() => {
+        const content = form.nextElementSibling;
+        content.innerHTML = texto
+            .replace(`Usuario: ${nombre}`, `<strong>Usuario:</strong> <strong>${nombre}</strong>`)
+            .replace(`Clave: ${acceso}`, `<strong>Clave:</strong> <strong>${acceso}</strong>`);
+        content.style.display = 'block';
+        showNotification('Permiso generado y copiado');
+    });
+}
+
+function limpiarResultado() {
+  const resultado = document.getElementById('resultado-permiso');
+  resultado.innerHTML = '';
+  resultado.style.display = 'none';
+  showNotification('Resultado limpiado');
+}
+
+
