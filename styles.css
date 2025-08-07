@@ -365,3 +365,41 @@ tr:nth-child(even) {
     display: none;
   }
 }
+
+
+
+.template-form input {
+  width: 40%;         /* antes: 100% */
+  margin: 0.3rem auto;
+  padding: 6px 10px;  /* antes: 8px */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  display: block;     /* asegura que se centren */
+  font-size: 0.9rem;  /* opcional: texto más compacto */
+}
+
+
+.template-form button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+
+.template-form button:hover {
+  background-color: #16A085;
+}
+
+.template-content {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  display: none;
+  white-space: pre-wrap;
+}
