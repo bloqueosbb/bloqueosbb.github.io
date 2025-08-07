@@ -124,7 +124,13 @@ function limpiarResultado() {
   const resultado = document.getElementById('resultado-permiso');
   resultado.innerHTML = '';
   resultado.style.display = 'none';
-  showNotification('Resultado limpiado');
+
+  // Limpiar los campos del formulario
+  const form = document.querySelector('.template-form');
+  form.reset();
+
+  showNotification('Formulario y resultado limpiados');
 }
+
 
 
