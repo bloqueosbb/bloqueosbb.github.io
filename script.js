@@ -132,5 +132,93 @@ function limpiarResultado() {
   showNotification('Formulario y resultado limpiados');
 }
 
+// Función para copiar imagen al portapapeles
+async function copyImageToClipboard(imgURL) {
+    const res = await fetch(imgURL);
+    const blob = await res.blob();
+
+    try {
+        const item = new ClipboardItem({ [blob.type]: blob });
+        await navigator.clipboard.write([item]);
+        showNotification('Imagen copiada al portapapeles');
+    } catch (err) {
+        console.error("Error al copiar la imagen", err);
+        showNotification('Error al copiar la imagen', true);
+    }
+}
+
+// Mensajes predefinidos
+const ClaveTV1 = `It,.,2012`;
+const ClaveTV2 = `@iSPC#0202`;
+
+const mensajeSinSeguimiento = `Saludos.
+
+Hemos solicitado información necesaria para poder gestionar su petición, también hemos intentado contactar en varias ocasiones con el solicitante, pero no hemos recibido respuesta alguna.
+
+En vista de que han pasado las 48 Horas (tiempo que los colaboradores tienen disponible para responder la solicitud), procedemos a cerrar la incidencia.
+
+De continuar con el inconveniente que reporta, por favor, enviar una nueva solicitud a HELPDESK.`;
+
+const mensajeNoEsta = `Saludos.
+
+Contactamos con la extensión, pero nos informan que el solicitante no está disponible.
+
+Hemos dejado indicaciones para que se comunique con nosotros.`;
+
+const mensajeMyLearning = `Saludos.
+
+-Hemos realizado los cambios necesarios para que tu cuenta pueda sincronizar, solo tienes que hacer el cambio de clave en HRM. 
+
+-Recuerda: No usar nombres propios de personas, utiliza Comida, Fruta, Países, Colores, entre otros.
+
+-Mayúscula, un punto (.) y números (No repetidos de 3 en adelante 111 ... 123 etc).
+
+Ejemplo: Piscina..1247*`;
+
+const mensajePlantillaIncorrecta = `Saludos.
+
+Las peticiones sobre asignación de permisos y creación de usuario deben ser solicitadas con la plantilla correcta,
+las que llevan por nombre 'Permisos de usuario/Creación de usuario'.
+
+Favor abrir ticket nuevamente con la plantilla correcta.`;
+
+const mensajeP1 = `Saludos.
+
+Hemos recibido su petición, estaremos gestionando el caso a la mayor brevedad posible, sin embargo, vemos que tiene urgencia P1 y la misma no aplica para este tipo de casos.
+
+P1 (Muy urgente): Se refiere a incidencias que afectan de manera directa las operaciones de la empresa, por ejemplo, inconvenientes con el proceso de facturación en donde el cliente se encuentra en espera para poder finalizar su compra.`;
+
+const mensajeP2 = `Saludos.
+
+Hemos recibido su petición, estaremos gestionando el caso a la mayor brevedad posible, sin embargo, vemos que tiene urgencia P2 y la misma no aplica para este tipo de casos.
+
+P2 (Urgente): Se debe de utilizar para reportar incidencias que interfieren con las operaciones de la empresa de manera parcial, en donde existen otras alternativas para mantener la operación, pero se requiere la resolución del problema a la brevedad posible.`;
+
+const mensajeOutlook = `Debido a que el Outlook no es 100% compatible con nuestro Mailserver. es probable que se encuentre con ciertos problemas con dicha plataforma:
+-Se pierden correos, desaparecen carpetas, no llegan a todos los destinatarios...etc
+
+Pasamos a darles esta advertencia antes de proceder con la configuracion, podemos darles opciones alternativas con Thunderbird o usar la pagina de Webmail ( https://webmail.ikeasi.com/ ).
+
+Pero si deciden usar Outlook, favor de tener en cuenta las posibles consecuencias que puedan enfrentar.
+
+Nos dejan saber su respuesta.`;
+
+// Asignar eventos a los botones
+document.getElementById('btn-clave1tv').addEventListener('click', () => copyToClipboard(ClaveTV1));
+document.getElementById('btn-clave2tv').addEventListener('click', () => copyToClipboard(ClaveTV2));
+document.getElementById('btn-sin-contacto').addEventListener('click', () => copyToClipboard(mensajeSinContacto));
+document.getElementById('btn-sin-seguimiento').addEventListener('click', () => copyToClipboard(mensajeSinSeguimiento));
+document.getElementById('btn-my-learning').addEventListener('click', () => copyToClipboard(mensajeMyLearning));
+document.getElementById('btn-no-disponible').addEventListener('click', () => copyToClipboard(mensajeNoEsta));
+document.getElementById('btn-plantilla-incorrecta').addEventListener('click', () => copyToClipboard(mensajePlantillaIncorrecta));
+document.getElementById('btn-urgencia-p1').addEventListener('click', () => copyToClipboard(mensajeP1));
+document.getElementById('btn-urgencia-p2').addEventListener('click', () => copyToClipboard(mensajeP2));
+document.getElementById('btn-correo-outlook').addEventListener('click', () => copyToClipboard(mensajeOutlook));
+
+// Copiar imagen al portapapeles
+document.getElementById('btn-plantilla-incorrecta-foto').addEventListener('click', () => {
+  copyImageToClipboard('img/plantilla.png');
+});
+
 
 
