@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Consultas Bitboxer</title>
     <link rel="icon" type="image/png" href="./foto/favicon.png">
     <link rel="stylesheet" href="styles.css">
@@ -13,7 +14,7 @@
             <div class="left-side">
                 <h2>REINICIO BITBOXER</h2>      
                 <table>
-                    <tr>
+                    <tbody><tr>
                         <th>-TIENDA-</th>
                         <th>------------AREA------------</th>
                         <th>-NUMERO-</th>
@@ -52,18 +53,42 @@
                     </tr>
                     <tr>
                         <td>PUR</td>
-                        <td>SEGURIDAD BY<br>SEGURIDAD CA</td>
+                        <td>SEGURIDAD BY<br>SEGURIDAD CA<br>ALMACEN</td>
                         <td>
                             <span class="click-to-copy" data-phone-number="9394444540">939-444-4540</span><br>
-                            <span class="click-to-copy" data-phone-number="9394393547">939-439-3547</span>
+                            <span class="click-to-copy" data-phone-number="9394393547">939-439-3547</span><br>
+                            <span class="click-to-copy" data-phone-number="7872380878">787-238-0878</span>
                         </td>
                     </tr>
                     <tr>
                         <td>SDQ</td>
                         <td>JEFE DE DIA<br>ALMACEN</td>
                         <td>
-                            <span class="click-to-copy" data-phone-number="5001">5001</span><br>
+                            <span class="click-to-copy" data-phone-number="5001">5001</span> / <span class="click-to-copy" data-phone-number="5002">5002</span><br>
                             <span class="click-to-copy" data-phone-number="5678">5678</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PUJ</td>
+                        <td>JEFE DE DIA<br>ALMACEN</td>
+                        <td>
+                            <span class="click-to-copy" data-phone-number="18293454284">1 829-345-4284</span><br>
+                            <span class="click-to-copy" data-phone-number="">-</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>STI</td>
+                        <td>JEFE DE DIA<br>JEFE DE TARDE</td>
+                        <td>
+                            <span class="click-to-copy" data-phone-number="18294231810">18294231810</span><br>
+                            <span class="click-to-copy" data-phone-number="18294205121">18294205121</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>LRM</td>
+                        <td>ANA GUERRERO</td>
+                        <td>
+                            <span class="click-to-copy" data-phone-number="5877">5877</span>
                         </td>
                     </tr>
                     <tr>
@@ -74,15 +99,14 @@
                             <span class="click-to-copy" data-phone-number="8095017303">809-501-7303</span>
                         </td>
                     </tr>
-                </table>
+                </tbody></table>
             </div>
         </div>
 
         <!-- Botón GUARDIAS -->
-<div class="guardias-btn">
-    <button id="btn-guardias" onclick="redirectToGuardias()" style="background: linear-gradient(135deg, #1ABC9C, #16A085); color: white; padding: 1rem 2rem; border-radius: 12px; cursor: pointer;">GUARDIAS</button>
-    <button id="btn-facturas-corruptas" onclick="redirectToFacturasCorruptas()" style="background: linear-gradient(135deg, #1ABC9C, #16A085); color: white; padding: 1rem 2rem; border-radius: 12px; cursor: pointer;">Facturas Corruptas Cashbox</button>
-</div>
+    <div class="guardias-btn">
+        <button id="btn-guardias" onclick="redirectToGuardias()" style="background: linear-gradient(135deg, #1ABC9C, #16A085); color: white; padding: 1rem 2rem; border-radius: 12px; cursor: pointer;">GUARDIAS</button>
+    </div>
 
         <!-- Resto del contenido -->
         <h2>CONSULTAS DE BLOQUEOS BITBOXER</h2>
@@ -107,14 +131,8 @@
 
         <div class="query-btn">
             <button id="btn-desbloqueos" onclick="redirectToBloqueosPage()">DESBLOQUEOS BITBOXER</button>
+            <button id="btn-liberar-memoria">LIBERAR MEMORIA</button>
         </div>
-        <h2>------------------------------------------------------------------------</h2>
-	<h2>LIBERAR MEMORIA</h2>
-	<div class="query-btn">
-    		<button id="btn-liberar-memoria">LIBERAR MEMORIA</button>
-	</div>
-
-        <h2>------------------------------------------------------------------------</h2>
 	<h2>REGISTRAR BLOQUEOS</h2>
         <div class="button-container">
             <button id="btn-enlace1" onclick="redirectToSharePoint()">SHAREPOINT</button>
@@ -138,8 +156,68 @@
   <div class="template-content" id="resultado-permiso"></div>
 </div>
 
-
     </div>
+
+
+
+<div class="container">
+  <h2>PLANTILLAS</h2>
+  <div class="tables-container">
+    <div class="left-side">
+      <table>
+        <thead>
+          <tr>
+            <th>MOTIVO</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Claves Teamviewer</td>
+            <td>
+              <button id="btn-clave1tv" class="res-btn">It,.,2012</button>
+              <button id="btn-clave2tv" class="res-btn">@iSPC#0202</button>
+            </td>
+          </tr>            
+          <tr>
+            <td>Contacto Sin Éxito</td>
+            <td><button id="btn-sin-contacto" class="res-btn">COPIAR</button></td>
+          </tr>
+          <tr>
+            <td>Sin Seguimiento</td>
+            <td><button id="btn-sin-seguimiento" class="res-btn">COPIAR</button></td>
+          </tr>
+          <tr>
+            <td>My-Learning</td>
+            <td><button id="btn-my-learning" class="res-btn">COPIAR</button></td>
+          </tr>
+          <tr>
+            <td>Solicitante No Disponible</td>
+            <td><button id="btn-no-disponible" class="res-btn">COPIAR</button></td>
+          </tr>
+          <tr>
+            <td>Plantilla Incorrecta</td>
+            <td>
+              <button id="btn-plantilla-incorrecta" class="res-btn">COPIAR</button>
+              <button id="btn-plantilla-incorrecta-foto" class="res-btn">FOTO</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Urgencia Incorrecta</td>
+            <td>
+              <button id="btn-urgencia-p1" class="res-btn">P1</button>
+              <button id="btn-urgencia-p2" class="res-btn">P2</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Correo Outlook</td>
+            <td><button id="btn-correo-outlook" class="res-btn">COPIAR</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
     <script src="script.js"></script>
 </body>
