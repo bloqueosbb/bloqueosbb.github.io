@@ -35,22 +35,27 @@ document.getElementById('btn-sudo-gca').addEventListener('click', () => copyToCl
 document.getElementById('btn-bbdd-gca').addEventListener('click', () => copyToClipboard('psql produccion_lpa'));
 document.getElementById('btn-consulta-gca').addEventListener('click', () => copyToClipboard('select blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
 
-document.getElementById('btn-sudo-pmi').addEventListener('click', () => copyToClipboard('sudo su postgres'));
+// document.getElementById('btn-sudo-pmi').addEventListener('click', () => copyToClipboard('sudo su postgres'));
 document.getElementById('btn-bbdd-pmi').addEventListener('click', () => copyToClipboard('psql produccion_pmi'));
-document.getElementById('btn-consulta-pmi').addEventListener('click', () => copyToClipboard('select blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
+// document.getElementById('btn-consulta-pmi').addEventListener('click', () => copyToClipboard('select blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
 
-document.getElementById('btn-sudo-tfe').addEventListener('click', () => copyToClipboard('sudo su postgres'));
+// document.getElementById('btn-sudo-tfe').addEventListener('click', () => copyToClipboard('sudo su postgres'));
 document.getElementById('btn-bbdd-tfe').addEventListener('click', () => copyToClipboard('psql produccion_tfe'));
-document.getElementById('btn-consulta-tfe').addEventListener('click', () => copyToClipboard('select blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
+// document.getElementById('btn-consulta-tfe').addEventListener('click', () => copyToClipboard('select blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
 
-document.getElementById('btn-sudo-lza').addEventListener('click', () => copyToClipboard('sudo su postgres'));
+// document.getElementById('btn-sudo-lza').addEventListener('click', () => copyToClipboard('sudo su postgres'));
 document.getElementById('btn-bbdd-lza').addEventListener('click', () => copyToClipboard('psql produccion_lza'));
-document.getElementById('btn-consulta-lza').addEventListener('click', () => copyToClipboard('select blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
+// document.getElementById('btn-consulta-lza').addEventListener('click', () => copyToClipboard('select blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;'));
 
 
 document.getElementById('btn-val').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_val\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;\n'));
-document.getElementById('btn-sdq').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql sd_produccion\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;\n'));
-document.getElementById('btn-pur').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_pr\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;\n'));
+
+// document.getElementById('btn-sdq').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql sd_produccion\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;\n'));
+document.getElementById('btn-sdq').addEventListener('click', () => copyToClipboard('psql sd_produccion'));
+
+// document.getElementById('btn-pur').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_pr\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;\n'));
+
+document.getElementById('btn-pur').addEventListener('click', () => copyToClipboard('produccion_pr'))
 document.getElementById('btn-cau').addEventListener('click', () => copyToClipboard('sudo su postgres\npsql produccion_ca\nselect blocked_pid, blocking_pid, query_blocked from migracion.ver_bloqueos;\n'));
 
 // Eventos para los números telefónicos
@@ -67,11 +72,11 @@ function redirectToBloqueosPage() {
 }
 
 function redirectToSharePoint() {
-    window.open('https://ikeasi.sharepoint.com/:x:/s/BITBOXCARIBESRL/EbSZ8Bh_jQ9OpNwkx-w5aSgBmXwsxxMtAwvHAxqXRVCslQ?e=MpCCcu', '_blank');
+    window.open('https://ikeasi.sharepoint.com/:x:/s/BITBOXCARIBESRL/IQDnsBUDTSdYQ6YgFFFL6jLRAeZpOSl7jr7eXi26j24GQXc?e=XxGvpA', '_blank');
 }
 
 function redirectToOneNote() {
-    window.open('https://ikeasi.sharepoint.com/sites/BITBOXCARIBESRL/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FBITBOXCARIBESRL%2FDocumentos%20compartidos%2FHelpdesk%2FConsultas%20Bloqueos%20%2D%202025&p=true&ga=1', '_blank');
+    window.open('https://ikeasi.sharepoint.com/:f:/s/BITBOXCARIBESRL/IgBTn1HoTS-DT4ISrAr66FHeASepu2A5nybuxFqie7VKf3Q?e=cFhtx3', '_blank');
 }
 
 function redirectToGuardias() {
@@ -150,6 +155,15 @@ async function copyImageToClipboard(imgURL) {
 // Mensajes predefinidos
 const ClaveTV1 = `It,.,2012`;
 const ClaveTV2 = `@iSPC#0202`;
+
+const mensajeSinContacto = `Saludos.
+
+Hemos intentado contactar a la Ext. pero no hemos tenido éxito.
+Estaremos intentando más tarde.
+
+Puede llamarnos a la Ext.8000 y con gusto le ayudaremos.
+También nos puede hablar via Skype a Soporte Helpdesk.`
+
 
 const mensajeSinSeguimiento = `Saludos.
 
